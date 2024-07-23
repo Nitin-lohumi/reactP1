@@ -1,11 +1,11 @@
 import React,{ useContext } from "react";
 import { context } from "../App";
 function Login(){
-   const {appColor} = useContext(context);
+   const state = useContext(context);
    return (
     <>
-    <h1>thiis is login page {appColor}</h1>
-    <i>heuuu</i>
+    <h1>thiis is login page {state.appColor}</h1>
+    <i>{state.write}</i>
     </>
    )
 }

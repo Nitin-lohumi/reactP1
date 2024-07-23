@@ -9,20 +9,17 @@ function App() {
     "2" : "blue",
     "3" : "yellow"
    }
+   const read="this is a readable line";
+   console.log(colors);
   const [count,setCount] = useState(0);
   const [color,setColor] = useState();
+  const [readable,setread] = useState(read);
   setInterval(()=> {
     setCount(count+1);
-   if( count <=3 ){
-    setColor(colors[count]);
-   }else{
-    do{
-      setCount(0);
+    if(count==1||count==2||count==3){
       setColor(colors[count]);
-      console.log(count);
-     }while(count!=0);
-   }
-  }, 1000);
+    }
+  }, 1500);
   const [check,setcheck] = useState(0);
   function click(){
    if(check==0){
@@ -34,7 +31,7 @@ function App() {
   }
   return(
     <>
-    <context.Provider value={{appColor:color}}> 
+    <context.Provider value={{appColor:color,write:readable}}> 
      <button onClick={click}>click</button>
      {check==1?<Login/>:<About/>}
     </context.Provider>
